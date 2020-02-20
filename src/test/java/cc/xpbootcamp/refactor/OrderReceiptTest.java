@@ -9,8 +9,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 class OrderReceiptTest {
+
     @Test
-    void shouldPrintCustomerInformationOnOrder() {
+    void should_print_customer_information_on_order() {
         Order order = new Order("Mr X", "Chicago, 60601", new ArrayList<LineItem>());
         OrderReceipt receipt = new OrderReceipt(order);
 
@@ -22,7 +23,7 @@ class OrderReceiptTest {
     }
 
     @Test
-    public void shouldPrintLineItemAndSalesTaxInformation() {
+    void should_print_line_item_and_sales_tax_information() {
         List<LineItem> lineItems = new ArrayList<LineItem>() {{
             add(new LineItem("milk", 10.0, 2));
             add(new LineItem("biscuits", 5.0, 5));

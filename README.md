@@ -34,8 +34,8 @@ TW工程师接收后，却发现代码存在神一般的命名和谜一般的逻
 
 ### 第三部：开启重构环
 - Rename Field，`OrderReceipt`类中的字段：`o` -> `order`
-- Rename Variable，`OrderReceipt`类中`printReceipt`方法中的：`tot` -> `totalAmount`
 - Rename Variable，`OrderReceipt`类中`printReceipt`方法中的：`totSalesTx` -> `totalSalesTax`
+- Rename Variable，`OrderReceipt`类中`printReceipt`方法中的：`tot` -> `totalAmountWithTax`
 - Rename Field，`Order`类中的字段：`nm` -> `customerName`
 - Rename Field，`Order`类中的字段：`addr` -> `address`
 - Rename Field，`Order`类中的字段：`li` -> `lineItems`

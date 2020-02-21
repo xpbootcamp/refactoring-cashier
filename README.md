@@ -43,14 +43,14 @@ TW工程师接收后，却发现代码存在神一般的命名和谜一般的逻
 - Rename Field，`LineItem`类中的字段：`qty` -> `quantity`
 - Rename Field，`LineItem`类中的字段：`desc` -> `description`
 - Extract Method，提取计算税额的方法`calculateSalesTax`，消除注释
-- Replace Temp with Query，消除掉临时变量``，
+- Replace Temp with Query，消除掉临时变量`salesTax`
 - Move Method，移动计算税额的方法`calculateSalesTax`到`LineItem`类中
-- Extract Method，提取计算总额的方法`calculateTotalAmount`，消除注释
-- Move Method，移动计算总额的方法`calculateTotalAmount`到`LineItem`类中
+- Extract Method，提取计算总额的方法`calculateTotalAmountWithTax`，消除注释
+- Move Method，移动计算总额的方法`calculateTotalAmountWithTax`到`LineItem`类中
 - Extract Method，提取计算总税额的方法`calculateTotalSalesTax`
 - Move Method，移动计算总税额的方法`calculateTotalSalesTax`到`Order`类中
-- Extract Method，提取计算总额的方法`calculateTotalAmount`
-- Move Method，移动计算总额的方法`calculateTotalAmount`到`Order`类中
+- Extract Method，提取计算总额的方法`calculateTotalAmountWithTax`
+- Move Method，移动计算总额的方法`calculateTotalAmountWithTax `到`Order`类中
 - Extract Method，提取注明Headers方法`stateHeaders`
 - Extract Method，提取注明总税额方法`stateTotalSalesTax`
 - Extract Method，提取注明总额方法`stateTotalAmount`
@@ -64,7 +64,11 @@ TW工程师接收后，却发现代码存在神一般的命名和谜一般的逻
 - Rename Method，将`OrderReceipt`类中的`printReceipt`重命名为`generateReceipt`
 - Substitute Algorithm，将`Order`中`calculateTotalSalesTax`方法中的For环替换掉
 - Substitute Algorithm，将`Order`中`calculateTotalAmount`方法中的For环替换掉
-
+- Move Method，将`OrderReceipt`中的方法`stateLineItems`、`stateCustomer`、`stateStateTax`、`stateTotalAmountWithTax`方法移动到 `Order`类中
+- Extract Method，将`OrderReceipt`类中`printReceipt`方法调用`Order`的四行代码，提取出一个方法`generateReceipt`
+- Move Method，将`OrderReceipt`类中`generateReceipt`方法移动到`Order`类中
+- 私有化`Order`类中的方法`stateLineItems`、`stateCustomer`、`stateStateTax`、`stateTotalAmountWithTax`
+- Remove Middle Man，将`Order`类中`getCustomerName`、`getCustomerAddress`、`getLineItems`方法移除，内部直接调用属性
 
 
 

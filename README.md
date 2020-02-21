@@ -32,7 +32,7 @@ TW工程师接收后，却发现代码存在神一般的命名和谜一般的逻
 - 为复杂逻辑空行，可以按注释分界
 - 将类中的属性私有化
 
-### 第三部：开启重构环
+### 第三步：开启重构环（闻味道、用手法、验结果）
 - Rename Field，`OrderReceipt`类中的字段：`o` -> `order`
 - Rename Variable，`OrderReceipt`类中`printReceipt`方法中的：`totSalesTx` -> `totalSalesTax`
 - Rename Variable，`OrderReceipt`类中`printReceipt`方法中的：`tot` -> `totalAmountWithTax`
@@ -69,6 +69,7 @@ TW工程师接收后，却发现代码存在神一般的命名和谜一般的逻
 - Move Method，将`OrderReceipt`类中`generateReceipt`方法移动到`Order`类中
 - 私有化`Order`类中的方法`stateLineItems`、`stateCustomer`、`stateStateTax`、`stateTotalAmountWithTax`
 - Remove Middle Man，将`Order`类中`getCustomerName`、`getCustomerAddress`、`getLineItems`方法移除，内部直接调用属性
+- Remove Middle Man，将`LineItem`类中`getPrice`、`getQuantity`方法移除
 
 
 
